@@ -1,5 +1,5 @@
 {
-  "name": "react-bootstrap",
+  "name": "react-bootstrap-code",
   "version": "3.0.0",
   "private": false,
   "main": "dist/react-bootstrap.js",
@@ -42,7 +42,7 @@
     "clean:dist": "rm -rf dist",
     "release": "HUSKY=0 standard-version",
     "prebuild": "npm run clean:build",
-    "deploy": "npm publish && npm run build && netlify deploy --prod",
+    "deploy": "npm publish && npm run build && netlify deploy --dir=build --prod",
     "postdeploy": "HUSKY=0 git push --follow-tags",
     "prepublishOnly": "npm run release -- --release-as major && npm run clean:dist && npm run build:lib",
     "lint": "eslint --ignore-path .gitignore src/**/*.{js,jsx}",

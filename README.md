@@ -2,6 +2,8 @@
 
 Bootstrapping react app to pre configure app. React application
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2ae3cd8d-7332-42b0-8393-a4f706fc92c0/deploy-status)](https://app.netlify.com/sites/bootstrap-reactjs/deploys)
+
 ## Setup for local development
 
 Set the correct environment variables (Ask a developer for the dotenv files)
