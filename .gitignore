@@ -50,8 +50,11 @@ typings/
 # misc
 .DS_Store
 .env
-.env.*
+.env.dev
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Netlify folder
+.netlify

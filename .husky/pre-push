@@ -2,5 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 
 exec < /dev/tty && gh secret set DEV_ENV_FILE -b"$(eval "openssl base64 -A -in .env.dev")"
-exec < /dev/tty && gh secret set STAGING_ENV_FILE -b"$(eval "openssl base64 -A -in .env.staging")"
-exec < /dev/tty && gh secret set PROD_ENV_FILE -b"$(eval "openssl base64 -A -in .env.prod")"

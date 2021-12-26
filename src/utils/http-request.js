@@ -1,14 +1,13 @@
 import axios from 'axios';
 import humps from 'humps';
 import { getErrorMessage } from './errors';
-import { getAuthToken, getVenueId } from './app-config';
 import { showErrorMessage } from './alerts';
 
 const getDefaultHeaders = () => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${getAuthToken()}`,
+    // Authorization: `Bearer ${getAuthToken()}`,
   };
   return headers;
 };
@@ -55,7 +54,6 @@ class HttpRequest {
 
         config.params = {
           ...(config?.params || {}),
-          venueId: getVenueId(),
         };
 
         // decamelize parameters since server expected it in underscore format variable_name
