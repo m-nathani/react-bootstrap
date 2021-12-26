@@ -6,6 +6,32 @@
   "files": [
     "dist/**"
   ],
+  "description": "Boilerplate to bootstrap CRA project",
+  "keywords": [
+    "boilerplate",
+    "code structure",
+    "code",
+    "bootstrap",
+    "webpack",
+    "micro-frontend",
+    "react",
+    "create-react-app",
+    "cra",
+    "craco",
+    "eslint",
+    "config",
+    "plugin",
+    "lint",
+    "ecmascript",
+    "javascript",
+    "react",
+    "jsx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-nathani/react-bootstrap.git"
+  },
+  "author": "mudza100@gmail.com",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.16.1",
@@ -42,7 +68,7 @@
     "clean:dist": "rm -rf dist",
     "release": "HUSKY=0 standard-version",
     "prebuild": "npm run clean:build",
-    "deploy": "npm publish && npm run build && netlify deploy --dir=build --prod",
+    "deploy": "cp ./.env.dev ./.env && npm publish && npm run build && netlify deploy --dir=build --prod",
     "postdeploy": "HUSKY=0 git push --follow-tags",
     "prepublishOnly": "npm run release -- --release-as major && npm run clean:dist && npm run build:lib",
     "lint": "eslint --ignore-path .gitignore src/**/*.{js,jsx}",
