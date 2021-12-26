@@ -1,0 +1,46 @@
+@import 'src/styles/global/bulma-overrides';
+@import 'src/styles/global/colors';
+@import 'src/styles/global/utils';
+@import 'src/styles/global/variables';
+
+.button {
+  width: 340px;
+  @include mobile {
+    max-width: 85vw;
+  }
+  height: 60px;
+  border: none;
+  background-color: $success-button;
+  border-color: $success-button;
+  color: $white;
+  border-radius: $border-radius-xl;
+  font-size: rem(17px);
+  cursor: pointer;
+
+  > svg {
+    vertical-align: middle;
+  }
+
+  &:focus {
+    outline: 1px solid $focus-outline;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $disabled-button;
+    border-color: $disabled-button;
+    color: $white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $disabled-button;
+      border-color: $disabled-button;
+    }
+  }
+
+  &:hover,
+  &:active {
+    background-color: $success-button-hover;
+    border-color: $success-button-hover;
+  }
+}

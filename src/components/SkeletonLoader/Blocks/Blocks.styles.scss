@@ -1,0 +1,55 @@
+.webrms-skeleton-loader-wrapper--blocks {
+  $block-height: 65px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 1rem;
+
+  .react-loading-skeleton {
+    margin-bottom: 0.2rem;
+  }
+
+  .skeleton-loader {
+    background: white;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 23%;
+    background: white;
+    border: none;
+    box-shadow: 1px 2px 2px #1d1d1d2b;
+    margin-bottom: 1rem;
+
+    @media only screen and (min-width: 673px) {
+      font-size: 0.7rem;
+    }
+
+    // SKELETON LOADER
+    span:last-of-type .react-loading-skeleton {
+      margin-bottom: 0;
+    }
+  }
+
+  &.has-circle {
+    justify-content: center;
+
+    .skeleton-loader {
+      display: flex;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      height: 80px;
+      width: 260px;
+      border-radius: 12px;
+    }
+
+    .skeleton-bars {
+      flex: 1;
+      margin-left: 0.5rem;
+
+      .react-loading-skeleton {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

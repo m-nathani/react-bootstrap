@@ -1,0 +1,69 @@
+@import '~include-media/dist/include-media';
+
+// Bulma Overrides
+$control-height: 50px;
+$primary: #19a69a;
+$danger: #e65359;
+$dark: #1b1b30;
+$text: #5d6572;
+
+$phone: 361px;
+$tablet: 673px;
+$desktop: 1025px;
+$large-desktop: 1408px;
+
+$breakpoints: (
+  phone: $phone,
+  tablet: $tablet,
+  desktop: $desktop,
+  large-desktop: $large-desktop,
+);
+
+/* Inclusive and exclusive operators for a finer control over the intervals */
+@mixin mobile {
+  @include media('<tablet') {
+    @content;
+  }
+}
+
+@mixin tabletAndAbove {
+  @include media('>=tablet') {
+    @content;
+  }
+}
+
+@mixin desktopAndAbove {
+  @include media('>=desktop') {
+    @content;
+  }
+}
+
+@mixin smallMobile {
+  @include media('<=phone') {
+    @content;
+  }
+}
+
+@mixin smallHeightMobile {
+  @media (max-height: 600px) {
+    @content;
+  }
+}
+
+@mixin largeDesktop {
+  @include media('>=large-desktop') {
+    @content;
+  }
+}
+
+@mixin betweenTabletAndDesktop {
+  @include media('>=tablet', '<1024px') {
+    @content;
+  }
+}
+
+@mixin smallHeightDesktop {
+  @media (max-height: 768px) {
+    @content;
+  }
+}

@@ -1,0 +1,24 @@
+.skeleton-loader-wrapper--simple-form {
+  margin: 0 0.5rem;
+
+  .skeleton-loader {
+    background: white;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+
+    // SKELETON LOADER
+    span:last-of-type .react-loading-skeleton {
+      margin-bottom: 0;
+    }
+  }
+
+  .react-loading-skeleton {
+    border-radius: 12px;
+    margin-bottom: 0.65rem;
+
+    &:nth-child(3n) {
+      margin-bottom: 0;
+    }
+  }
+}

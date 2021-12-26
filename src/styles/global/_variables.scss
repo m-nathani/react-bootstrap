@@ -1,0 +1,31 @@
+$border-radius: 2px;
+$border-radius-xs: $border-radius * 2;
+$border-radius-sm: $border-radius * 3;
+$border-radius-md: $border-radius * 4;
+$border-radius-lg: $border-radius * 6;
+$border-radius-xl: $border-radius * 8;
+
+$block-box-shadow: 0px 2px 4px 2px #0000002f;
+$main-height: 670px;
+$main-height-small-desktop: 600px;
+$main-height-mobile: 100vh;
+$content-header-height: 40px;
+$sidebar-header-height: 75px;
+$footer-height: 100px;
+
+// 40px =  20px (padding top of aside) + 20px (language filter overflow)
+$nav-bar-height: calc($main-height - (#{$sidebar-header-height} + #{$footer-height} + 40px));
+$nav-bar-height-small-desktop: calc(
+  $main-height-small-desktop - (#{$sidebar-header-height} + #{$footer-height} + 40px)
+);
+$nav-bar-height-mobile: calc(
+  $main-height-mobile - (#{$sidebar-header-height} + #{$footer-height} + 30px)
+);
+// 10px = padding
+$content-height-mobile: calc(
+  $main-height-mobile - (#{$content-header-height} + #{$footer-height} + 10px)
+);
+
+// Penner easing functions
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);

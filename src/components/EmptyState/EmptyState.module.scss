@@ -1,0 +1,56 @@
+@import 'src/styles/global/bulma-overrides';
+@import 'src/styles/global/colors';
+@import 'src/styles/global/utils';
+@import 'src/styles/global/variables';
+
+.templateEmptyStateWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  svg,
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  @include mobile() {
+    svg,
+    img {
+      margin-bottom: 0;
+    }
+    .title {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  .emptyStateLinkTo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(150px);
+    height: rem(44px);
+    background: $green-primary;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: $border-radius-lg;
+    margin-top: 2rem;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}

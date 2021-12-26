@@ -1,0 +1,26 @@
+@import 'common';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#react-bootstrap-root {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Display', 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  font-weight: normal;
+  line-height: 1.5;
+  font-size: 16px;
+  letter-spacing: normal;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  .is-ios * {
+    cursor: pointer;
+  }
+}

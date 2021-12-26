@@ -1,0 +1,43 @@
+.webrms-skeleton-loader-wrapper--list {
+  margin: 0 0.5rem;
+
+  .skeleton-loader {
+    background: white;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    padding: 0.5rem;
+
+    // SKELETON LOADER
+    span:last-of-type .react-loading-skeleton {
+      margin-bottom: 0;
+    }
+  }
+
+  &.has-circle {
+    .skeleton-loader {
+      height: 70px;
+
+      & > div {
+        flex-direction: row !important;
+      }
+    }
+
+    .skeleton-bars {
+      flex: 1;
+      margin-left: 0.5rem;
+
+      .react-loading-skeleton {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .react-loading-skeleton {
+    border-radius: 12px;
+    margin-bottom: 0.65rem;
+
+    &:nth-child(3n) {
+      margin-bottom: 0;
+    }
+  }
+}

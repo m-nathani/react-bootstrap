@@ -1,0 +1,8 @@
+@import 'src/styles/global/utils';
+
+.titleWrapper {
+  margin-bottom: rem(20);
+  .inputLabel {
+    margin-bottom: rem(10);
+  }
+}
