@@ -29,7 +29,7 @@ jobs:
             ${{ runner.os }}-node-
             ${{ runner.os }}-
 
-      - name: Set npm config to publish private repo
+      - name: Set npm config to publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
         env:
