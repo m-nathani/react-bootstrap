@@ -43,7 +43,7 @@ const Input = ({
     if (showInput && inputRef.current?.focus) inputRef.current.focus();
   }, [showInput]);
 
-  const Label = () => (
+  const renderLabel = () => (
     <InputLabel
       htmlFor={id}
       className={labelClassName}
@@ -54,12 +54,13 @@ const Input = ({
         </>
       }
       tooltip={tooltip}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...(!showLabelOnly && { onClick: handleShowInput, onFocus: handleShowInput })}
     />
   );
 
   if (showLabelOnly) {
-    return <Label />;
+    return renderLabel();
   }
 
   if (showInput)
@@ -93,7 +94,7 @@ const Input = ({
       />
     );
 
-  return <Label />;
+  return renderLabel();
 };
 
 Input.propTypes = {

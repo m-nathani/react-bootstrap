@@ -4,9 +4,31 @@ Boilerplate to bootstrap react app with pre configure changes.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2ae3cd8d-7332-42b0-8393-a4f706fc92c0/deploy-status)](https://app.netlify.com/sites/bootstrap-reactjs/deploys)
 
+## Demo
+
+Play demo [here](https://bootstrap-reactjs.netlify.app/)
+
 ## Setup for local development
 
 Using Set the correct environment variables (Ask a developer for the dotenv files)
+
+## Folder structure
+
+```
+├── apis
+├── assets
+├── components
+├── constants
+├── contexts
+├── hooks
+├── locales
+├── pages
+├── redux-store
+├── services
+├── styles
+└── utils
+
+```
 
 ## Deployment
 

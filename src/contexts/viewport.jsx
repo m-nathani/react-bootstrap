@@ -40,6 +40,7 @@ export const ViewportContextProvider = ({ children }) => {
 
   return (
     <ViewportContext.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         width,
         height,

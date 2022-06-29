@@ -6,6 +6,7 @@ import { ViewportContextProvider } from 'contexts/viewport';
 import useSetViewportHeightCSS from 'hooks/useSetViewportHeightCSS';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
+import { AlertContainer } from './utils/alerts';
 import 'styles/main.scss';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <React.StrictMode>
       <Provider store={store}>
+        <AlertContainer />
         <ViewportContextProvider>
           <Routes />
         </ViewportContextProvider>

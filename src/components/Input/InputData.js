@@ -23,6 +23,7 @@ const Input = forwardRef(
       labelClassName,
       tooltip,
       bold,
+      // eslint-disable-next-line react/jsx-props-no-spreading
       ...props
     },
     inputRef
@@ -51,6 +52,7 @@ const Input = forwardRef(
           width,
         }}
         list={list}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />
       {datalist}

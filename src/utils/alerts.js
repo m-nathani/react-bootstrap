@@ -1,6 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
-import { isWebview, isMobileDevice } from './devices';
+import { toast, ToastContainer } from 'react-toastify';
 import { ReactComponent as OfflineIcon } from '../assets/icons/offline.svg';
 import { ReactComponent as OnlineIcon } from '../assets/icons/online.svg';
 import '../styles/alerts.style.scss';
@@ -8,10 +7,10 @@ import '../styles/alerts.style.scss';
 const onlineNetworkToastId = 'webrms_onlineNetworkToastId';
 const offlineNetworkToastId = 'webrms_offlineNetworkToastId';
 
-const toastrConfig = {
+const toasterConfig = {
   closeButton: true,
   position: 'top-right',
-  autoClose: 8000,
+  autoClose: 7000,
   hideProgressBar: false,
   newestOnTop: false,
   closeOnClick: true,
@@ -26,30 +25,31 @@ const toastrConfig = {
 const OnlineComponent = () => (
   <>
     Internet connection is back
-    {isWebview() ? null : (
-      <button
-        className="reload-after-online"
-        type="button"
-        onClick={() => {
-          if (window?.location?.reload) window?.location?.reload();
-        }}
-      >
-        Reload
-      </button>
-    )}
+    <button
+      className="reload-after-online"
+      type="button"
+      onClick={() => {
+        window?.location?.reload?.();
+      }}
+    >
+      Reload
+    </button>
   </>
 );
 
-export const showErrorMessage = (message) => {
-  toast.error(message, toastrConfig);
+export const showErrorMessage = (message, config = {}) => {
+  /* NOTE: toastId is kept to message to avoid duplicate toast of the same error message.
+   * read here for more info: https://fkhadra.github.io/react-toastify/prevent-duplicate
+   */
+  toast.error(message, { ...toasterConfig, toastId: message, ...config });
 };
 
-export const showSuccessMessage = (message) => {
-  toast.success(message, toastrConfig);
+export const showSuccessMessage = (message, config = {}) => {
+  toast.success(message, { ...toasterConfig, ...config });
 };
 
-export const showInformation = (message) => {
-  toast.info(message, toastrConfig);
+export const showInformation = (message, config = {}) => {
+  toast.info(message, { ...toasterConfig, ...config });
 };
 
 export const showOnline = () => {
@@ -57,7 +57,7 @@ export const showOnline = () => {
   toast.clearWaitingQueue();
   toast.dismiss();
   toast.success(OnlineComponent, {
-    ...toastrConfig,
+    ...toasterConfig,
     toastId: onlineNetworkToastId,
     closeOnClick: true,
     autoClose: false,
@@ -68,10 +68,10 @@ export const showOnline = () => {
 
 export const showOffline = () => {
   // dismiss all toast and queue to show offline network toast
-  toast.dismiss();
   toast.clearWaitingQueue();
+  toast.dismiss();
   toast.error('No internet connection', {
-    ...toastrConfig,
+    ...toasterConfig,
     toastId: offlineNetworkToastId,
     closeButton: false,
     closeOnClick: false,
@@ -81,8 +81,7 @@ export const showOffline = () => {
   });
 };
 
-export const configureToast = () => {
-  toast.configure({ limit: isMobileDevice ? 2 : 4 });
-};
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const AlertContainer = (props) => <ToastContainer limit={1} {...props} />;
 
-export { toast } from 'react-toastify';
+export { toast, ToastContainer } from 'react-toastify';

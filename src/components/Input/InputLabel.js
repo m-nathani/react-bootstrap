@@ -21,7 +21,8 @@ const InputLabel = ({
 
   return (
     <span className={styles.inputLabel}>
-      <span
+      <button
+        type="button"
         className={classnames({
           [styles.clickLabel]: !!onClick,
           [className]: !!className,
@@ -37,7 +38,7 @@ const InputLabel = ({
         >
           {value}
         </label>
-      </span>
+      </button>
       {tooltip ? (
         <Tooltip
           trigger="hover"
